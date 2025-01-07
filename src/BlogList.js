@@ -11,12 +11,13 @@ const BlogList = (props) => {
             <h1>{title}</h1>
             <div className="home">
             
-        <button onClick={()=>handleDelete(author)}>Delete Blog</button>
 
     {blogs.map((blog) => (
-    <div className="blog-preview">
+    <div className="blog-preview" key={blog.id}>
     <h2>{blog.title}</h2>
     <p>Written by: {blog.author}</p>
+    <button onClick={()=>handleDelete(blog.author)}>Delete Blog</button>
+
     </div>
     ))
     }
